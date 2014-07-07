@@ -9,7 +9,7 @@ Chooses optimal tuning parameter lambda for function dLDA based on the m-fold cr
 }
 \usage{
 cv.dLDA(Xtrain, Ytrain, lambdaval = NULL, nl = 100, msep = 5, eps = 1e-6,
-    l_min_ratio = 0.01)
+    l_min_ratio = 0.01,myseed=NULL,prior=TRUE)
 }
 \arguments{
   \item{Xtrain}{
@@ -33,6 +33,12 @@ Tolerance level for the convergence of the optimization algorithm; the default v
   \item{l_min_ratio}{
 Smallest value for lambda, as a fraction of \code{lambda.max}, the data-derived value for which all coefficients are zero; the default value is 0.01.
 }
+\item{myseed}{
+Optional specification of random seed for generating the folds; the default value is NULL.
+}
+\item{prior}{
+A logical indicating whether to put larger weights to the groups of larger size; the default value is TRUE.
+}
 }
 
 %\details{
@@ -41,9 +47,9 @@ Smallest value for lambda, as a fraction of \code{lambda.max}, the data-derived 
 
 \value{
  \item{lambdaval}{The sequence of tuning parameters used}
- \item{error}{The mean cross-validated number of misclassified observations - a vector of length length(lambdaval)}
+ \item{error}{The mean cross-validated number of misclassified observations - a vector of length \code{length(lambdaval)}}
  \item{lambda}{The value of tuning parameter that has the minimal mean cross-validation error}
- \item{f}{The mean cross-validated number of non-zero features - a vector of length length(lambdaval)}
+ \item{f}{The mean cross-validated number of non-zero features - a vector of length \code{length(lambdaval)}}
 }
 \references{
 I.Gaynanova, J.Booth and M.Wells (2014). "Simultaneous sparse estimation of canonical vectors in the p>>N setting"
