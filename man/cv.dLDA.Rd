@@ -9,7 +9,7 @@ Chooses optimal tuning parameter lambda for function dLDA based on the m-fold cr
 }
 \usage{
 cv.dLDA(Xtrain, Ytrain, lambdaval = NULL, nl = 100, msep = 5, eps = 1e-6,
-    l_min_ratio = ifelse(n<p,0.1,0.0001),myseed=NULL,prior=TRUE,rho=0.01)
+    l_min_ratio = ifelse(n<p,0.1,0.0001),myseed=NULL,prior=TRUE,rho=1)
 }
 \arguments{
   \item{Xtrain}{
@@ -39,7 +39,7 @@ Optional specification of random seed for generating the folds; the default valu
 \item{prior}{
 A logical indicating whether to put larger weights to the groups of larger size; the default value is TRUE.
 }
-\item{rho}{A small scalar that ensures the objective function is bounded from below; the default values is 0.01.
+\item{rho}{A scalar that ensures the objective function is bounded from below; the default value is 1.
 }
 }
 
@@ -49,8 +49,9 @@ A logical indicating whether to put larger weights to the groups of larger size;
 
 \value{
  \item{lambdaval}{The sequence of tuning parameters used}
- \item{error}{The mean cross-validated number of misclassified observations - a vector of length \code{length(lambdaval)}}
- \item{lambda}{The value of tuning parameter that has the minimal mean cross-validation error}
+ \item{error_mean}{The mean cross-validated number of misclassified observations - a vector of length \code{length(lambdaval)}}
+ \item{error_se}{The standard error associated with each value of \code{error_mean}}
+ \item{lambda_min}{The value of tuning parameter that has the minimal mean cross-validation error}
  \item{f}{The mean cross-validated number of non-zero features - a vector of length \code{length(lambdaval)}}
 }
 \references{
@@ -80,7 +81,7 @@ xtrain=matrix(rnorm(p*n*G),n*G,p)
 # find optimal tuning parameter
 out.cv=cv.dLDA(xtrain,ytrain)
 # find V
-V=dLDA(xtrain,ytrain,lambda=out.cv$lambda)
+V=dLDA(xtrain,ytrain,lambda=out.cv$lambda_min)
 # number of non-zero features
 sum(rowSums(V)!=0)
 }
