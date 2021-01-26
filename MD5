@@ -1,5 +1,5 @@
-581b6b676377414f626331085f9397e8 *DESCRIPTION
-21364d0603c585a841f15d52e4c073b1 *NAMESPACE
+23e3985bebbd7c4e63af24fdd77edf96 *DESCRIPTION
+d12ce7270bd71e11d4c30ff60e1bf893 *NAMESPACE
 f73774d708e8846be00fb923d8d28fc4 *R/SolveMyLasso.R
 3cbfee49b17336ef36eaa17ee0ac276f *R/SolveMyLassoF.R
 e0ee394d3fd59dc01753a97b08766222 *R/classifyV.R
@@ -7,8 +7,10 @@ e0ee394d3fd59dc01753a97b08766222 *R/classifyV.R
 93b48fda06dbfdbd41127caa3c4c84dc *R/cv.dLDA.R
 920c7e55a2ccfd4074caee7a2b9245c5 *R/dLDA.R
 2fd5cd0a9119d5268ae7be7f3a01092c *R/directFLDA-internal.R
-2b76957453bee5e385998f57c25f33be *man/MGSDA-package.Rd
-cccf0b49618d54bfc593842978df7529 *man/classifyV.Rd
-dfa0483567b3aa696b89de14e84a7e1f *man/cv.dLDA.Rd
-bd31398bfa959a488ac67cf44fd9683a *man/dLDA.Rd
+7ec7a025537547e365ac00f8a94dbff8 *README.md
+f24e656c14c8c5b3978fcbc9da0fce8d *man/MGSDA-package.Rd
+aea473988448d3b5a81af497ec511ca8 *man/classifyV.Rd
+da62451965c49dccb5f697c0691019a7 *man/cv.dLDA.Rd
+99f542103d56b32948f2dc2ba2162eb9 *man/dLDA.Rd
+11f07eb9d52df373a43e9f7b3fecb5cc *src/MGSDA_init.c
 2ccadce2b9bc1e32523eaaf0b821f294 *src/solveVcoordf2st.c
